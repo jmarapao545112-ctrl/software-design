@@ -62,6 +62,7 @@
             btnOrder.TabIndex = 2;
             btnOrder.Text = "Descending Order";
             btnOrder.UseVisualStyleBackColor = true;
+            btnOrder.Click += btnOrder_Click;
             // 
             // Form1
             // 
