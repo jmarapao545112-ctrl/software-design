@@ -44,10 +44,10 @@
             // 
             // btnSort
             // 
-            btnSort.Location = new Point(73, 103);
+            btnSort.Location = new Point(56, 103);
             btnSort.Margin = new Padding(3, 4, 3, 4);
             btnSort.Name = "btnSort";
-            btnSort.Size = new Size(140, 49);
+            btnSort.Size = new Size(157, 49);
             btnSort.TabIndex = 1;
             btnSort.Text = "Bubble Sort";
             btnSort.UseVisualStyleBackColor = true;
@@ -55,10 +55,10 @@
             // 
             // btnOrder
             // 
-            btnOrder.Location = new Point(73, 180);
+            btnOrder.Location = new Point(56, 180);
             btnOrder.Margin = new Padding(3, 4, 3, 4);
             btnOrder.Name = "btnOrder";
-            btnOrder.Size = new Size(140, 49);
+            btnOrder.Size = new Size(157, 49);
             btnOrder.TabIndex = 2;
             btnOrder.Text = "Descending Order";
             btnOrder.UseVisualStyleBackColor = true;
