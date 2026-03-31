@@ -29,33 +29,49 @@
         private void InitializeComponent()
         {
             listBoxResults = new ListBox();
-            btnSort1 = new Button();
+            btnSort = new Button();
+            btnOrder = new Button();
             SuspendLayout();
             // 
             // listBoxResults
             // 
             listBoxResults.FormattingEnabled = true;
-            listBoxResults.Location = new Point(356, 77);
+            listBoxResults.Location = new Point(251, 103);
+            listBoxResults.Margin = new Padding(3, 4, 3, 4);
             listBoxResults.Name = "listBoxResults";
-            listBoxResults.Size = new Size(298, 199);
+            listBoxResults.Size = new Size(582, 284);
             listBoxResults.TabIndex = 0;
             // 
-            // btnSort1
+            // btnSort
             // 
-            btnSort1.Location = new Point(117, 77);
-            btnSort1.Name = "btnSort1";
-            btnSort1.Size = new Size(98, 37);
-            btnSort1.TabIndex = 1;
-            btnSort1.Text = "Sort";
-            btnSort1.UseVisualStyleBackColor = true;
+            btnSort.Location = new Point(73, 103);
+            btnSort.Margin = new Padding(3, 4, 3, 4);
+            btnSort.Name = "btnSort";
+            btnSort.Size = new Size(140, 49);
+            btnSort.TabIndex = 1;
+            btnSort.Text = "Bubble Sort";
+            btnSort.UseVisualStyleBackColor = true;
+            btnSort.Click += btnSort_Click;
+            // 
+            // btnOrder
+            // 
+            btnOrder.Location = new Point(73, 180);
+            btnOrder.Margin = new Padding(3, 4, 3, 4);
+            btnOrder.Name = "btnOrder";
+            btnOrder.Size = new Size(140, 49);
+            btnOrder.TabIndex = 2;
+            btnOrder.Text = "Descending Order";
+            btnOrder.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(btnSort1);
+            ClientSize = new Size(914, 600);
+            Controls.Add(btnOrder);
+            Controls.Add(btnSort);
             Controls.Add(listBoxResults);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
             Text = "Form1";
             ResumeLayout(false);
@@ -64,6 +80,7 @@
         #endregion
 
         private ListBox listBoxResults;
-        private Button btnSort1;
+        private Button btnSort;
+        private Button btnOrder;
     }
 }
