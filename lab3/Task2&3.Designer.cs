@@ -35,16 +35,20 @@
             // listBoxShow
             // 
             listBoxShow.FormattingEnabled = true;
-            listBoxShow.Location = new Point(82, 62);
+            listBoxShow.ItemHeight = 15;
+            listBoxShow.Location = new Point(72, 46);
+            listBoxShow.Margin = new Padding(3, 2, 3, 2);
             listBoxShow.Name = "listBoxShow";
-            listBoxShow.Size = new Size(630, 224);
+            listBoxShow.Size = new Size(552, 199);
             listBoxShow.TabIndex = 0;
             // 
             // buttonShow
             // 
-            buttonShow.Location = new Point(82, 312);
+            buttonShow.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonShow.Location = new Point(72, 261);
+            buttonShow.Margin = new Padding(3, 2, 3, 2);
             buttonShow.Name = "buttonShow";
-            buttonShow.Size = new Size(108, 29);
+            buttonShow.Size = new Size(128, 28);
             buttonShow.TabIndex = 1;
             buttonShow.Text = "Show Items";
             buttonShow.UseVisualStyleBackColor = true;
@@ -52,11 +56,12 @@
             // 
             // Task2_3
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(700, 338);
             Controls.Add(buttonShow);
             Controls.Add(listBoxShow);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Task2_3";
             Text = "Task2_3";
             ResumeLayout(false);
