@@ -7,8 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static lab3.Task2_3;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 
 namespace lab3
@@ -22,7 +20,18 @@ namespace lab3
 
         public class Book
         {
-            public string Title { get; set; }
+            // ADDED VALIDATION: Prevents empty titles
+            private string title;
+            public string Title
+            {
+                get { return title; }
+                set
+                {
+                    if (string.IsNullOrWhiteSpace(value)) throw new ArgumentException("Title cannot be empty.");
+                    title = value;
+                }
+            }
+
             public string Author { get; set; }
 
             public virtual string GetInfo()
@@ -33,7 +42,18 @@ namespace lab3
 
         public class Magazine : Book
         {
-            public int IssueNum { get; set; }
+            // ADDED VALIDATION: Prevents negative issue numbers
+            private int issueNum;
+            public int IssueNum
+            {
+                get { return issueNum; }
+                set
+                {
+                    if (value < 0) throw new ArgumentException("Issue number cannot be negative.");
+                    issueNum = value;
+                }
+            }
+
             public override string GetInfo()
             {
                 return $"{Title} - Issue {IssueNum}";
@@ -49,7 +69,6 @@ namespace lab3
                 return $"{Title} - (Ebook - {FileSizeMb} MB)";
             }
         }
-
 
         private void ProcessBooks(Book[] books)
         {
@@ -76,7 +95,18 @@ namespace lab3
 
         public class TextBook : Book
         {
-            public string Subject { get; set; }
+            // ADDED VALIDATION: Prevents empty subjects
+            private string subject;
+            public string Subject
+            {
+                get { return subject; }
+                set
+                {
+                    if (string.IsNullOrWhiteSpace(value)) throw new ArgumentException("Subject cannot be empty.");
+                    subject = value;
+                }
+            }
+
             public override string GetInfo()
             {
                 return $"{Title} - {Subject} TextBook";
@@ -94,5 +124,4 @@ namespace lab3
             }
         }
     }
-
 }

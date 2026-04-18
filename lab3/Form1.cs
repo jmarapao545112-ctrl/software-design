@@ -33,7 +33,7 @@ namespace lab3
             {
                 Title = "Tech Weekly",
                 Author = "John Doe",
-                IssueNumber = 45
+                IssueNumber = -45
             };
             MessageBox.Show(myBook.GetInfo());
         }
