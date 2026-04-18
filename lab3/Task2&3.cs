@@ -20,7 +20,6 @@ namespace lab3
 
         public class Book
         {
-            // ADDED VALIDATION: Prevents empty titles
             private string title;
             public string Title
             {
@@ -42,7 +41,6 @@ namespace lab3
 
         public class Magazine : Book
         {
-            // ADDED VALIDATION: Prevents negative issue numbers
             private int issueNum;
             public int IssueNum
             {
@@ -95,7 +93,6 @@ namespace lab3
 
         public class TextBook : Book
         {
-            // ADDED VALIDATION: Prevents empty subjects
             private string subject;
             public string Subject
             {

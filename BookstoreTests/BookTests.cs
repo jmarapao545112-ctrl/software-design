@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using lab3; // Links to your lab3 project
-using static lab3.Task2_3; // Links to the nested classes inside your form
+using lab3; 
+using static lab3.Task2_3; 
 
 namespace BookstoreTests
 {
@@ -19,7 +19,6 @@ namespace BookstoreTests
         [TestMethod]
         public void TestMagazineCreation()
         {
-            // Changed IssueNumber to IssueNum to match your code
             Magazine magazine = new Magazine { Title = "Tech Weekly", Author = "Jane Doe", IssueNum = 12 };
             Assert.AreEqual("Tech Weekly", magazine.Title);
             Assert.AreEqual(12, magazine.IssueNum);
@@ -35,7 +34,6 @@ namespace BookstoreTests
                 new EBook { Title = "Learn C#", Author = "Mark Jones", FileSizeMb = 5 }
             };
 
-            // Updated string matches to exactly match what YOUR GetInfo() methods return
             Assert.AreEqual("Generic Book by John Smith", books[0].GetInfo());
             Assert.AreEqual("Tech Weekly - Issue 12", books[1].GetInfo());
             Assert.AreEqual("Learn C# - (Ebook - 5 MB)", books[2].GetInfo());
