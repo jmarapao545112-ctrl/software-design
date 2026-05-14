@@ -12,6 +12,11 @@ namespace lab5
         {
             InitializeComponent();
 
+            using (var context = new BookstoreContext())
+            {
+                context.Database.EnsureCreated();
+            }
+
             listBoxBooks.SelectedIndexChanged += listBoxBooks_SelectedIndexChanged;
         }
 
