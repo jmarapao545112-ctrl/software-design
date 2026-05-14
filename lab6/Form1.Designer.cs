@@ -188,12 +188,12 @@
             txtSearch.Location = new Point(48, 27);
             txtSearch.Name = "txtSearch";
             txtSearch.PlaceholderText = "Search";
-            txtSearch.Size = new Size(170, 23);
+            txtSearch.Size = new Size(260, 23);
             txtSearch.TabIndex = 4;
             // 
             // btnSearch
             // 
-            btnSearch.Location = new Point(234, 27);
+            btnSearch.Location = new Point(323, 27);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(75, 23);
             btnSearch.TabIndex = 5;

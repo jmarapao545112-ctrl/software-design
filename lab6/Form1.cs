@@ -29,20 +29,16 @@ namespace lab6
         {
             using (var context = new BookstoreContext())
             {
-                // First, get the raw list of books from the database
                 var books = await context.Books.Include(b => b.Author).ToListAsync();
                 var formattedBooks = new List<string>();
 
-                // Loop through the books to format them and report progress
                 for (int i = 0; i < books.Count; i++)
                 {
                     var b = books[i];
                     formattedBooks.Add($"{b.BookId} - {b.Title} by {b.Author.Name}");
 
-                    // Simulate a slightly heavy workload so you can actually see the progress bar move
                     await Task.Delay(200);
 
-                    // Calculate the percentage completed and report it
                     if (progress != null)
                     {
                         int percentage = ((i + 1) * 100) / books.Count;
@@ -130,7 +126,11 @@ namespace lab6
         public async void LoadList()
         {
             var booksWithAuthors = await GetBooksAsync(null);
+
+            lstboxBooks.SelectedIndexChanged -= lstboxBooks_SelectedIndexChanged;
             lstboxBooks.DataSource = booksWithAuthors;
+            lstboxBooks.SelectedIndex = -1;
+            lstboxBooks.SelectedIndexChanged += lstboxBooks_SelectedIndexChanged;
         }
 
         private async void btnAddBook_Click(object sender, EventArgs e)
@@ -143,11 +143,12 @@ namespace lab6
             await SaveBookAsync(authorName, bookName);
             MessageBox.Show("Book and Author added successfully!");
             LoadList();
+            ClearFields();
 
             btnAddBook.Enabled = true;
         }
 
-        private void btnFetchBooks_Click(object sender, EventArgs e)
+        private async void btnFetchBooks_Click(object sender, EventArgs e)
         {
             btnFetchBooks.Enabled = false;
             progressBar1.Value = 0;
@@ -172,11 +173,13 @@ namespace lab6
         private async void btnUpdateBook_Click(object sender, EventArgs e)
         {
             await UpdateBookAsync();
+            ClearFields();
         }
 
         private async void btnDeleteBook_Click(object sender, EventArgs e)
         {
             await DeleteBookAsync();
+            ClearFields();
         }
 
         private void lstboxBooks_SelectedIndexChanged(object sender, EventArgs e)
@@ -235,6 +238,15 @@ namespace lab6
             }
 
             btnSearch.Enabled = true;
+        }
+
+        private void ClearFields()
+        {
+            txtBookId.Clear();
+            txtBookTitle.Clear();
+            txtAuthorName.Clear();
+
+            lstboxBooks.ClearSelected();
         }
     }
 }
